@@ -1,0 +1,51 @@
+
+==================== Verifying equivalencias_farmaceuticas_hcm_base.xlsx ====================
+Shape: (3274, 5)
+
+Columns:
+  - CÓDIGO HCM
+  - PRODUTO HCM
+  - CÓDIGO RHC
+  - PRODUTO RHC
+  - SIMILARIDADE
+
+Non-null counts:
+CÓDIGO HCM      3274
+PRODUTO HCM     3274
+CÓDIGO RHC       681
+PRODUTO RHC      681
+SIMILARIDADE     681
+dtype: int64
+
+============================================================
+SAMPLE OF MATCHES (High Similarity)
+============================================================
+
+Total matches: 681
+
+First 10 matches:
+                                    PRODUTO HCM                                              PRODUTO RHC SIMILARIDADE
+                      ABAIXADOR DE LINGUA (*.*)                                      ABAIXADOR DE LINGUA      100.00%
+                          ABSORVENTE GERIATRICO                                    ABSORVENTE GERIATRICO      100.00%
+  ACETILCISTEINA D 600 MG GRANULADO (FLUIMUCIL) ACETILCISTEINA D 600 MG GRANULADO (FLUIMUCIL) - ENVELOPE       92.45%
+                  ACICLOVIR CREME 10G (ZOVIRAX)                     ACICLOVIR CREME 10G (ZOVIRAX) - TUBO       94.62%
+              ACIDO ZOLEDRONICO 4MG FA (ZOMETA)                     ACIDO ZOLEDRONICO 4MG (ZOMETA)* - FA       87.65%
+                            ADAPTADOR PARA SORO                          ADAPTADOR PARA SORO (TRANSOFIX)       88.00%
+     AGULHA  P/ANESTESIA  STIMUPLEX 50A 0.70X50                 AGULHA P/ANESTESIA STIMUPLEX 50A 0.70X50      100.00%
+            AGULHA ASPIRACAO PONTA ROMBA 25X12                        AGULHA ASPIRACAO PONTA ROMBA 25X12      100.00%
+AGULHA DE ASPIRACAO /MIELOGRAMA 16G 0,5 A 6,8CM          AGULHA DE ASPIRACAO /MIELOGRAMA 16G 0,5 A 6,8CM      100.00%
+          AGULHA DE ESCLEROSE 22G X 4MM X 230CM                    AGULHA DE ESCLEROSE 22G X 4MM X 230CM      100.00%
+
+============================================================
+SAMPLE OF NON-MATCHES
+============================================================
+
+Total non-matches: 2593
+
+First 5 non-matches:
+                                  PRODUTO HCM
+               A4SMS2/ AVENTAL SMS AZUL DUPLO
+               A4SMS2/ AVENTAL SMS AZUL DUPLO
+                              AAS COMP 500 MG
+           ABSORVENTE ALWAYS BASIC C/ AB SECA
+AC. ACETILSALICILICO 100MG (ASPIRINA PREVENT)

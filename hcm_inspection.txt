@@ -1,0 +1,17 @@
+
+==================== Inspecting base_hcm.xlsx ====================
+Shape: (10827, 7)
+Columns:
+  - CÓDIGO
+  - PRODUTO
+  - ESPÉCIE
+  - HCM
+  - CÓDIGO RHC
+  - PRODUTO.1
+  - CÓDIGO BIONEXO + ESPECIFICAÇÕES
+
+First 3 rows:
+   CÓDIGO                                        PRODUTO                         ESPÉCIE  HCM  CÓDIGO RHC  PRODUTO.1  CÓDIGO BIONEXO + ESPECIFICAÇÕES
+0   29560                    CATETER DIAGNOSTICO JL 4 4F                 34 - OPME - RHC  NaN         NaN        NaN                              NaN
+1   29464  MASCARA VENTILATORIA DE ANESTESIA C/ COXIM N4  2 - MATERIAL MEDICO HOSPITALAR  NaN         NaN        NaN                              NaN
+2   29463  MASCARA VENTILATORIA DE ANESTESIA C/ COXIM N5  2 - MATERIAL MEDICO HOSPITALAR  NaN         NaN        NaN                              NaN

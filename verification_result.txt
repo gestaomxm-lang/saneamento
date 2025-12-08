@@ -1,0 +1,29 @@
+
+==================== Verifying base_de_para.xlsx ====================
+Shape: (10827, 7)
+Columns:
+  - CÓDIGO
+  - PRODUTO
+  - ESPÉCIE
+  - HCM
+  - CÓDIGO RHC
+  - PRODUTO.1
+  - CÓDIGO BIONEXO + ESPECIFICAÇÕES
+
+Non-null counts:
+CÓDIGO                             10827
+PRODUTO                            10827
+ESPÉCIE                            10827
+HCM                                 4990
+CÓDIGO RHC                          2016
+PRODUTO.1                           2016
+CÓDIGO BIONEXO + ESPECIFICAÇÕES     1985
+dtype: int64
+
+Sample of matched rows (where 'CÓDIGO RHC' is not null):
+                          PRODUTO  CÓDIGO RHC                      PRODUTO.1
+13            ABAIXADOR DE LINGUA     30202.0            ABAIXADOR DE LINGUA
+35  ABSORVENTE ALWAIYS BAAS SUAVE     30203.0  ABSORVENTE ALWAIYS BAAS SUAVE
+37          ABSORVENTE GERIATRICO     30204.0          ABSORVENTE GERIATRICO
+38          ABSORVENTE GERIATRICO     30204.0          ABSORVENTE GERIATRICO
+44   ACEBROFILINA XAROPE 25MG/5ML     31841.0   ACEBROFILINA XAROPE 25MG/5ML

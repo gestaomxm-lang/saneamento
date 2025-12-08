@@ -1,0 +1,32 @@
+
+==================== Inspecting base_de_para.xlsx ====================
+Shape: (10827, 7)
+Columns:
+  - CÓDIGO
+  - PRODUTO
+  - ESPÉCIE
+  - HCM
+  - CÓDIGO RHC
+  - PRODUTO.1
+  - CÓDIGO BIONEXO + ESPECIFICAÇÕES
+
+First 2 rows:
+   CÓDIGO                                        PRODUTO                         ESPÉCIE  HCM  CÓDIGO RHC  PRODUTO.1  CÓDIGO BIONEXO + ESPECIFICAÇÕES
+0   29560                    CATETER DIAGNOSTICO JL 4 4F                 34 - OPME - RHC  NaN         NaN        NaN                              NaN
+1   29464  MASCARA VENTILATORIA DE ANESTESIA C/ COXIM N4  2 - MATERIAL MEDICO HOSPITALAR  NaN         NaN        NaN                              NaN
+
+==================== Inspecting base_rhc.xlsx ====================
+Shape: (1930, 7)
+Columns:
+  - CÓDIGO DO PRODUTO
+  - PRODUTO
+  - CÓDIGO BIONEXO + ESPECIFICAÇÕES
+  - ESPECIE
+  - CLASSE
+  - SUB CLASSE
+  - INATIVAR
+
+First 2 rows:
+   CÓDIGO DO PRODUTO                        PRODUTO                   CÓDIGO BIONEXO + ESPECIFICAÇÕES                           ESPECIE    CLASSE                       SUB CLASSE INATIVAR
+0              30202            ABAIXADOR DE LINGUA  10610 - ABAIXADOR DE LINGUA (PCT C/100) - PACOTE  MATERIAL MEDICO HOSPITALAR - RHC  APOSITOS  MATERIAIS DE HIGIENE E CUIDADOS      NaN
+1              30203  ABSORVENTE ALWAIYS BAAS SUAVE                                    INDIVIDUAL RHC  MATERIAL MEDICO HOSPITALAR - RHC  APOSITOS  MATERIAIS DE HIGIENE E CUIDADOS      NaN

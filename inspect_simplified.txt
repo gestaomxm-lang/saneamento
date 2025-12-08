@@ -1,0 +1,38 @@
+
+==================== Inspecting base_rhc.xlsx ====================
+Shape: (1930, 2)
+Columns:
+  - CÓDIGO DO PRODUTO
+  - PRODUTO
+
+First 10 rows:
+   CÓDIGO DO PRODUTO                                            PRODUTO
+0              30202                                ABAIXADOR DE LINGUA
+1              30203                      ABSORVENTE ALWAIYS BAAS SUAVE
+2              30204                              ABSORVENTE GERIATRICO
+3              31841                       ACEBROFILINA XAROPE 25MG/5ML
+4              31088               ACETAZOLAMIDA 250 MG (DIAMOX) - COMP
+5              31486    ACETILCISTEINA 10% 3ML 100 MG (FLUIMUCIL) - AMP
+6              41007  ACETILCISTEINA 200MG GRANULADO (FLUIMUCIL) - E...
+7              31487  ACETILCISTEINA D 600 MG GRANULADO (FLUIMUCIL) ...
+8              31365  ACETILCISTEINA XAROPE 20 MG/ ML 100 ML (FLUIMU...
+9              30116                   ACICLOVIR 200MG (ZOVIRAX) - COMP
+
+==================== Inspecting base_hcm.xlsx ====================
+Shape: (3274, 2)
+Columns:
+  - CÓDIGO
+  - PRODUTO
+
+First 10 rows:
+   CÓDIGO                                        PRODUTO
+0   26405                 A4SMS2/ AVENTAL SMS AZUL DUPLO
+1   28209                 A4SMS2/ AVENTAL SMS AZUL DUPLO
+2    8127                                AAS COMP 500 MG
+3   10610                      ABAIXADOR DE LINGUA (*.*)
+4   26020             ABSORVENTE ALWAYS BASIC C/ AB SECA
+5   26863                          ABSORVENTE GERIATRICO
+6    9530  AC. ACETILSALICILICO 100MG (ASPIRINA PREVENT)
+7   14769    AC. ACETILSALICILICO 81MG (BUFFERIN CARDIO)
+8   19996                   AC. SALICILICO 1% SPRAY 50ML
+9    8695           ACARBOSE 50MG (GLUCOBAY)  COMPRIMIDO

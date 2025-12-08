@@ -1,0 +1,47 @@
+
+==================== Verifying resultado_de_para.xlsx ====================
+Shape: (10827, 10)
+
+Columns:
+  - CÓDIGO HCM
+  - PRODUTO HCM
+  - ESPÉCIE HCM
+  - HCM
+  - CÓDIGO RHC
+  - PRODUTO RHC
+  - CÓDIGO BIONEXO RHC
+  - ESPECIE RHC
+  - CLASSE RHC
+  - SUB CLASSE RHC
+
+Non-null counts:
+CÓDIGO HCM            10827
+PRODUTO HCM           10827
+ESPÉCIE HCM           10827
+HCM                    4990
+CÓDIGO RHC             2016
+PRODUTO RHC            2016
+CÓDIGO BIONEXO RHC     1985
+ESPECIE RHC            2016
+CLASSE RHC             2016
+SUB CLASSE RHC         2016
+dtype: int64
+
+============================================================
+SAMPLE OF MATCHED ROWS (where HCM data exists)
+============================================================
+
+Total matches: 10827
+
+First 5 matches:
+PRODUTO RHC  CÓDIGO RHC                                   PRODUTO HCM  CÓDIGO HCM
+        NaN         NaN                   CATETER DIAGNOSTICO JL 4 4F       29560
+        NaN         NaN MASCARA VENTILATORIA DE ANESTESIA C/ COXIM N4       29464
+        NaN         NaN MASCARA VENTILATORIA DE ANESTESIA C/ COXIM N5       29463
+        NaN         NaN                             RECARGA 45MM BEGE       28743
+        NaN         NaN                    RECARGA 45MM BEGE (CONSIG)       34001
+
+============================================================
+SAMPLE OF NON-MATCHED ROWS (where HCM data is missing)
+============================================================
+All rows have matches.

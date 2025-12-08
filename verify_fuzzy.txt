@@ -1,0 +1,51 @@
+
+==================== Verifying equivalencias_farmaceuticas.xlsx ====================
+Shape: (1930, 5)
+
+Columns:
+  - CÓDIGO RHC
+  - PRODUTO RHC
+  - CÓDIGO HCM
+  - PRODUTO HCM
+  - SIMILARIDADE
+
+Non-null counts:
+CÓDIGO RHC      1930
+PRODUTO RHC     1930
+CÓDIGO HCM       675
+PRODUTO HCM      675
+SIMILARIDADE     675
+dtype: int64
+
+============================================================
+SAMPLE OF MATCHES (High Similarity)
+============================================================
+
+Total matches: 675
+
+First 10 matches:
+                                             PRODUTO RHC                                     PRODUTO HCM SIMILARIDADE
+                                     ABAIXADOR DE LINGUA                       ABAIXADOR DE LINGUA (*.*)      100.00%
+                                   ABSORVENTE GERIATRICO                           ABSORVENTE GERIATRICO      100.00%
+ACETILCISTEINA D 600 MG GRANULADO (FLUIMUCIL) - ENVELOPE   ACETILCISTEINA D 600 MG GRANULADO (FLUIMUCIL)       92.45%
+                    ACICLOVIR CREME 10G (ZOVIRAX) - TUBO                   ACICLOVIR CREME 10G (ZOVIRAX)       94.62%
+                    ACIDO ZOLEDRONICO 4MG (ZOMETA)* - FA               ACIDO ZOLEDRONICO 4MG FA (ZOMETA)       87.65%
+                         ADAPTADOR PARA SORO (TRANSOFIX)                             ADAPTADOR PARA SORO       88.00%
+                      AGULHA ASPIRACAO PONTA ROMBA 25X12             AGULHA ASPIRACAO PONTA ROMBA 25X12       100.00%
+         AGULHA DE ASPIRACAO /MIELOGRAMA 16G 0,5 A 6,8CM AGULHA DE ASPIRACAO /MIELOGRAMA 16G 0,5 A 6,8CM      100.00%
+                   AGULHA DE ESCLEROSE 22G X 4MM X 230CM           AGULHA DE ESCLEROSE 22G X 4MM X 230CM      100.00%
+                AGULHA ESPECIAL P/RAQUI G 27 X 120 OBESO              AGULHA ESPECIAL P/RAQUI G 27 X 120       95.95%
+
+============================================================
+SAMPLE OF NON-MATCHES
+============================================================
+
+Total non-matches: 1255
+
+First 5 non-matches:
+                                          PRODUTO RHC
+                        ABSORVENTE ALWAIYS BAAS SUAVE
+                         ACEBROFILINA XAROPE 25MG/5ML
+                 ACETAZOLAMIDA 250 MG (DIAMOX) - COMP
+      ACETILCISTEINA 10% 3ML 100 MG (FLUIMUCIL) - AMP
+ACETILCISTEINA 200MG GRANULADO (FLUIMUCIL) - ENVELOPE
