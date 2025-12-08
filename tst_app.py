@@ -258,10 +258,17 @@ def main():
             uploaded_rhc = st.file_uploader("Base RHC (.xlsx)", type=["xlsx"])
             if uploaded_rhc: st.markdown(f"<small>✅ {uploaded_rhc.name}</small>", unsafe_allow_html=True)
 
+    # Session State Initialization
+    if 'results' not in st.session_state:
+        st.session_state['results'] = None
+    if 'processing_complete' not in st.session_state:
+        st.session_state['processing_complete'] = False
+
     # Execution
     st.markdown("### 2. Processamento")
     
     if uploaded_base and uploaded_rhc:
+        # Check if we need to process (Button click)
         if st.button("▶️ Executar Matching", type="primary", use_container_width=True):
             
             status = st.container(border=True)
@@ -352,35 +359,52 @@ def main():
                 log.markdown(f"✅ **Concluído!** {matches_found} matches em {time.time() - start_time:.1f}s")
                 pbar.progress(1.0)
                 
-                st.divider()
-                st.markdown("### 3. Resultados")
-                
-                m1, m2, m3 = st.columns(3)
-                m1.metric("Total de Itens", total)
-                m2.metric("Matches Encontrados", matches_found)
-                m3.metric("Eficiência", f"{matches_found/total*100:.1f}%")
-                
-                output = io.BytesIO()
-                with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
-                    df_results.to_excel(writer, index=False, sheet_name='Resultado')
-                
-                st.download_button(
-                    "📥 BAIXAR RESULTADO (XLSX)",
-                    data=output.getvalue(),
-                    file_name="resultado_matching_otimizado.xlsx",
-                    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-                    type="primary",
-                    use_container_width=True
-                )
-                
-                if st.button("🔄 Nova Análise"):
-                    st.rerun()
+                # Store in session state
+                st.session_state['results'] = df_results
+                st.session_state['processing_complete'] = True
+                st.session_state['total'] = total
+                st.session_state['matches'] = matches_found
+                st.rerun()
 
             except Exception as e:
                 st.error(f"Erro durante o processamento: {e}")
 
     else:
         st.info("👆 Anexe as planilhas para começar.")
+
+    # 3. Results Display (Persistent)
+    if st.session_state.get('processing_complete') and st.session_state.get('results') is not None:
+        
+        st.divider()
+        st.markdown("### 3. Resultados")
+        
+        df_results = st.session_state['results']
+        total = st.session_state['total']
+        matches_found = st.session_state['matches']
+        
+        m1, m2, m3 = st.columns(3)
+        m1.metric("Total de Itens", total)
+        m2.metric("Matches Encontrados", matches_found)
+        m3.metric("Eficiência", f"{matches_found/total*100:.1f}%")
+        
+        output = io.BytesIO()
+        with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
+            df_results.to_excel(writer, index=False, sheet_name='Resultado')
+        
+        st.download_button(
+            "📥 BAIXAR RESULTADO (XLSX)",
+            data=output.getvalue(),
+            file_name="resultado_matching_otimizado.xlsx",
+            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            type="primary",
+            use_container_width=True
+        )
+        
+        if st.button("🔄 Nova Análise"):
+            # Clear state
+            st.session_state['results'] = None
+            st.session_state['processing_complete'] = False
+            st.rerun()
 
 if __name__ == "__main__":
     main()
