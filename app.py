@@ -3,7 +3,11 @@ import pandas as pd
 import unicodedata
 from io import BytesIO
 
-st.set_page_config(page_title="Create Combined Depara", layout="wide")
+st.set_page_config(
+    page_title="Create Combined Depara",
+    layout="wide",
+    initial_sidebar_state="collapsed"
+)
 
 def normalize_text(text):
     """Normalize text for matching: remove accents, uppercase and strip whitespace."""
