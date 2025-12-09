@@ -207,6 +207,25 @@ def calculate_similarity_fast(input_item, candidate_item):
     
     return max(0, min(1, final_score))
 
+def validate_columns(df):
+    """
+    Validates if the DataFrame has exactly the required columns: 'CÓDIGO' and 'PRODUTO'.
+    Returns True if valid, raises ValueError with message if invalid.
+    """
+    required_cols = ['CÓDIGO', 'PRODUTO']
+    
+    # Check column count
+    if len(df.columns) != 2:
+        raise ValueError(f"O arquivo deve ter exatamente 2 colunas. Encontrado: {len(df.columns)} colunas ({', '.join(df.columns)}).")
+        
+    # Check column names (case-insensitive for better UX, but strict on content)
+    df.columns = [str(c).upper().strip() for c in df.columns]
+    
+    if list(df.columns) != required_cols:
+         raise ValueError(f"As colunas devem ser exatamente 'CÓDIGO' e 'PRODUTO'. Encontrado: {', '.join(df.columns)}.")
+    
+    return True
+
 # =============================================================================
 # STREAMLIT APP
 # =============================================================================
@@ -248,6 +267,16 @@ def main():
 
     # Uploads
     st.markdown("### 1. Upload dos Arquivos")
+    
+    # Instructions
+    st.info("""
+        **Padrão Obrigatório:** As planilhas devem conter **exatamente duas colunas** nesta ordem:
+        1. **CÓDIGO**
+        2. **PRODUTO**
+        
+        Arquivos fora deste padrão não serão processados.
+    """, icon="ℹ️")
+
     upload_container = st.container(border=True)
     with upload_container:
         col1, col2 = st.columns(2)
@@ -280,7 +309,14 @@ def main():
                 # 1. Load Data
                 log.text("📂 Lendo arquivos Excel...")
                 df_base = pd.read_excel(uploaded_base)
+                
+                # Validation Base
+                validate_columns(df_base)
+                
                 df_rhc = pd.read_excel(uploaded_rhc)
+                
+                # Validation RHC
+                validate_columns(df_rhc)
                 
                 # 2. Pre-process RHC (Heavy lifting, optimized & cached)
                 log.text("⚙️ Otimizando Base RHC (Indexação)...")
