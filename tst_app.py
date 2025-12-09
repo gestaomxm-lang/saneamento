@@ -209,20 +209,35 @@ def calculate_similarity_fast(input_item, candidate_item):
 
 def validate_columns(df):
     """
-    Validates if the DataFrame has exactly the required columns: 'CÓDIGO' and 'PRODUTO'.
-    Returns True if valid, raises ValueError with message if invalid.
+    Validates if the DataFrame has exactly 2 columns and normalizes headers.
+    Renames 'CÓDIGO DO PRODUTO' -> 'CÓDIGO', etc.
     """
-    required_cols = ['CÓDIGO', 'PRODUTO']
-    
     # Check column count
     if len(df.columns) != 2:
-        raise ValueError(f"O arquivo deve ter exatamente 2 colunas. Encontrado: {len(df.columns)} colunas ({', '.join(df.columns)}).")
+        raise ValueError(f"O arquivo deve ter exatamente 2 colunas. Encontrado: {len(df.columns)} colunas.")
         
-    # Check column names (case-insensitive for better UX, but strict on content)
-    df.columns = [str(c).upper().strip() for c in df.columns]
+    # Check column names (Flexible)
+    cols = [str(c).upper().strip() for c in df.columns]
     
-    if list(df.columns) != required_cols:
-         raise ValueError(f"As colunas devem ser exatamente 'CÓDIGO' e 'PRODUTO'. Encontrado: {', '.join(df.columns)}.")
+    # Map common variations to standard
+    replacements = {
+        'CÓDIGO DO PRODUTO': 'CÓDIGO',
+        'CODIGO DO PRODUTO': 'CÓDIGO',
+        'CODIGO': 'CÓDIGO',
+        'COD': 'CÓDIGO',
+        'DESCRIÇÃO': 'PRODUTO',
+        'DESCRICAO': 'PRODUTO',
+        'NOME': 'PRODUTO'
+    }
+    
+    new_cols = []
+    for c in cols:
+        new_cols.append(replacements.get(c, c))
+        
+    df.columns = new_cols
+    
+    # Final check - warn but don't crash if different, allowing user to proceed if 2 cols exist
+    # (User asked to remove restriction, so we'll trust the 2-column structure is enough for logic)
     
     return True
 
