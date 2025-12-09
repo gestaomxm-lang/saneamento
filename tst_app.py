@@ -284,7 +284,7 @@ def main():
         try: st.image("logo.png", use_container_width=True)
         except: pass
 
-    st.markdown("<h1 style='text-align: center; color: #001A72;'>Sistema de Matching Farmacêutico</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: #001A72;'>Sistema de Auxílio para Saneamento da Base de Dados RHC</h1>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center; color: #555;'>Identificação automática de equivalência de produtos</p>", unsafe_allow_html=True)
     st.divider()
 
