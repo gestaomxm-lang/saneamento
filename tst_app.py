@@ -248,6 +248,14 @@ def validate_columns(df):
 def main():
     st.set_page_config(page_title="Sistema de Matching", page_icon="💊", layout="centered")
 
+    # Session State Initialization (Must be first)
+    if 'results' not in st.session_state:
+        st.session_state['results'] = None
+    if 'processing_complete' not in st.session_state:
+        st.session_state['processing_complete'] = False
+    if 'uploader_key' not in st.session_state:
+        st.session_state['uploader_key'] = 0
+
     # Custom CSS
     st.markdown("""
         <style>
@@ -310,13 +318,7 @@ def main():
             )
             if uploaded_rhc: st.markdown(f"<small>✅ {uploaded_rhc.name}</small>", unsafe_allow_html=True)
 
-    # Session State Initialization
-    if 'results' not in st.session_state:
-        st.session_state['results'] = None
-    if 'processing_complete' not in st.session_state:
-        st.session_state['processing_complete'] = False
-    if 'uploader_key' not in st.session_state:
-        st.session_state['uploader_key'] = 0
+
 
     # Execution
     st.markdown("### 2. Processamento")
