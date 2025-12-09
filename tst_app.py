@@ -296,10 +296,18 @@ def main():
     with upload_container:
         col1, col2 = st.columns(2)
         with col1:
-            uploaded_base = st.file_uploader("Base Atual Unidade (.xlsx)", type=["xlsx"])
+            uploaded_base = st.file_uploader(
+                "Base Atual Unidade (.xlsx)", 
+                type=["xlsx"],
+                key=f"base_{st.session_state.uploader_key}"
+            )
             if uploaded_base: st.markdown(f"<small>✅ {uploaded_base.name}</small>", unsafe_allow_html=True)
         with col2:
-            uploaded_rhc = st.file_uploader("Base RHC (.xlsx)", type=["xlsx"])
+            uploaded_rhc = st.file_uploader(
+                "Base RHC (.xlsx)", 
+                type=["xlsx"],
+                key=f"rhc_{st.session_state.uploader_key}"
+            )
             if uploaded_rhc: st.markdown(f"<small>✅ {uploaded_rhc.name}</small>", unsafe_allow_html=True)
 
     # Session State Initialization
@@ -307,6 +315,8 @@ def main():
         st.session_state['results'] = None
     if 'processing_complete' not in st.session_state:
         st.session_state['processing_complete'] = False
+    if 'uploader_key' not in st.session_state:
+        st.session_state['uploader_key'] = 0
 
     # Execution
     st.markdown("### 2. Processamento")
@@ -455,6 +465,8 @@ def main():
             # Clear state
             st.session_state['results'] = None
             st.session_state['processing_complete'] = False
+            # Increment key to reset file uploaders
+            st.session_state['uploader_key'] += 1
             st.rerun()
 
 if __name__ == "__main__":
