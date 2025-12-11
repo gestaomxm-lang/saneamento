@@ -246,7 +246,7 @@ def validate_columns(df):
 # =============================================================================
 
 def main():
-    st.set_page_config(page_title="Sistema de Matching", page_icon="💊", layout="centered")
+    st.set_page_config(page_title="Sistema de Matching", page_icon="favicon.png", layout="centered")
 
     # Session State Initialization (Must be first)
     if 'results' not in st.session_state:
